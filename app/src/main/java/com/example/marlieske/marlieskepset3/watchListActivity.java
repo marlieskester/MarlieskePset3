@@ -18,9 +18,7 @@ public class watchListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         SharedPreferences spList = getPreferences(Context.MODE_PRIVATE);
-        String movie_0 = spList.getString("movie_0");
-
-
+        //String movie_0 = spList.getString("movie_0");
     }
     public void watchList() {
 

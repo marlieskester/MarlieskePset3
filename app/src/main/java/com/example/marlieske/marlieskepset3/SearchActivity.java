@@ -40,7 +40,7 @@ public class SearchActivity extends AppCompatActivity {
                 newAsyncTask.execute(Keyword);
                 AsyncTask.Status status = newAsyncTask.getStatus();
                 Log.d(status.toString(), "failed");
-                if (newAsyncTask.getStatus() == AsyncTask.Status.FINISHED) {
+                if (status == AsyncTask.Status.FINISHED) {
                     Log.d("fin", "failed");
                     finishedLoading((MovieAsyncTask) newAsyncTask);
                 }

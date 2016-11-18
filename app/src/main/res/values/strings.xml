@@ -2,4 +2,6 @@
     <string name="app_name">MarlieskePset3</string>
     <string name="toastNoKeyWord">Please enter keyword</string>
     <string name="preExToast">Loading your movies</string>
+    <string name="NotFoundToast">No movie found</string>
+    <string name="title_activity_watch_list">watchListActivity</string>
 </resources>

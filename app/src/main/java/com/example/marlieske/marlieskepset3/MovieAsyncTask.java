@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * When the data is downloaded, the file will ...
  */
 
-public class MovieAsyncTask extends AsyncTask<String, Void, String> {
+public class MovieAsyncTask extends AsyncTask<Object, Void, String> {
     Context context;
     SearchActivity activity;
     String result;
@@ -26,8 +26,10 @@ public class MovieAsyncTask extends AsyncTask<String, Void, String> {
         this.context=this.activity.getApplicationContext();
     }
 
+
+
     @Override
-    protected String doInBackground(String... params) {
+    protected String doInBackground(Object... params) {
         // executes search
         return HTTPRequestHelper.executeRequest(params[0]);
     }
@@ -42,15 +44,18 @@ public class MovieAsyncTask extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         //
 //        super.OnPostExecute(result);
+        Log.d("PE", "pre-if");
         if (result == "") {
             Log.d("PostExecute", "no result");
         }
         else {
+            Log.d("PE", "failed");
             returnString();
         }
     }
 
     public String returnString(){
+        Log.d("retstr", "failed");
         return result;
     }
 

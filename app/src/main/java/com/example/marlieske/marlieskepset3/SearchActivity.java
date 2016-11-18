@@ -5,6 +5,7 @@ import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -37,26 +38,25 @@ public class SearchActivity extends AppCompatActivity {
                 Keyword = ETKeyWord.getText().toString();
                 AsyncTask newAsyncTask = new MovieAsyncTask(this);
                 newAsyncTask.execute(Keyword);
+                AsyncTask.Status status = newAsyncTask.getStatus();
+                Log.d(status.toString(), "failed");
+                if (newAsyncTask.getStatus() == AsyncTask.Status.FINISHED) {
+                    Log.d("fin", "failed");
+                    finishedLoading((MovieAsyncTask) newAsyncTask);
+                }
             }
     }
 
-    public void DisplayMovie(MovieAsyncTask newAsyncTask) {
-        String result = newAsyncTask.returnString();
-        try {
-            JSONObject obj = new JSONObject(result);
-            String title = obj.getString("Title");
-            String year = obj.getString("Year");
-            String genre = obj.getString("Genre");
-            String plot = obj.getString("Plot");
-            String rating = obj.getString("imdbRating");
-        //    Image poster = obj.getString("Poster");
-        } catch (JSONException e) {
-            e.printStackTrace();
+
+
+    public void finishedLoading(MovieAsyncTask newAsyncTask) {
+
+            if (newAsyncTask.returnString() == "") {
+                Toast.makeText(this, R.string.NotFoundToast, Toast.LENGTH_SHORT).show();
+            } else {
+                Intent toFoundMovie = new Intent(this, FoundMovie.class);
+                startActivity(toFoundMovie);
+                finish();
+            }
         }
-    }
-
-    public void savedList() {
-
-    }
-
 }

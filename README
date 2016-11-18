@@ -1,0 +1,4 @@
+Ik heb heel hard mijn best gedaan, maar na 3 uur puzzelen zit ik nog steeds vast op een if loop die het niet doet in de searchactivity.
+Ik vermoed dat het zit in de syntax van de if-statement omdat de logs verder wel geprint worden.
+Verder heb ik oo mijn best gedaan om een array in de sharedpreferences te stoppen zodat je met een for-looop de alle films in je watchlist kunt weergeven, en die met een onclick event handler weer kan weergeven en van je list verwijderen.
+Dat was het plan, maar nu thuis zonder hulp kom ik er echt niet uit helaas :(

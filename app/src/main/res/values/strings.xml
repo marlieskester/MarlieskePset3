@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MarlieskePset3</string>
+    <string name="toastNoKeyWord">Please enter keyword</string>
+    <string name="preExToast">Loading your movies</string>
 </resources>
